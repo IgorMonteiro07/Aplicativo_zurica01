@@ -102,7 +102,7 @@ def voltar_tela_abrir():
     tela_abrir.show()
 def gerando_tab():
     if tela_escolhacpca.ESCOLHA01.isChecked():
-        print("help")
+        print("aleiluia")
 
     if tela_escolhacpca.ESCOLHA02.isChecked():
         print("ajuda")
