@@ -1,6 +1,5 @@
 #conexão do banco de dados
-import csv
-
+import os
 import mysql.connector # modulo que faz coneção com mysql
 from PyQt5 import uic,QtWidgets # MODULO GRAFICO UTILIZADO
 from PyQt5.QtWidgets import QMessageBox
@@ -102,7 +101,29 @@ def voltar_tela_abrir():
     tela_abrir.show()
 def gerando_tab():
     if tela_escolhacpca.ESCOLHA01.isChecked():
-        print("aleiluia")
+        if os.path.exists('igor.txt'):
+            tabulacao_txt = open('igor.txt','r')
+            linhas = tabulacao_txt.read().split("\n")
+            if len(linhas)>0:
+                arquivo_tb = open('tb.txt',"wt")
+                for indice in range(len(linhas)):
+                    tentativa = linhas[indice].split(';')
+                    print(tentativa)
+                    data = tentativa[0]
+                    cliente=tentativa[1]
+                    historico = tentativa[2]
+                    valor = tentativa[3]
+                    banco = tentativa[4]
+                    arquivo_tb.write(str(indice+1).ljust(5))
+                    arquivo_tb.write(str(data).ljust(10))
+                    arquivo_tb.write(str(cliente).ljust(15))
+                    arquivo_tb.write(str(historico).ljust(20))
+                    arquivo_tb.write(str(valor).ljust(25))
+                    arquivo_tb.write(str(banco).ljust(30)+('\n'))
+                arquivo_tb.close()
+        
+        else:
+            print("Essa budega não gerou")
 
     if tela_escolhacpca.ESCOLHA02.isChecked():
         print("ajuda")
