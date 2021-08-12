@@ -1,11 +1,11 @@
-1    13/07     13             recebimento dupl.3383 zurica contabilidade150,53                   2                             
-2    14/07     13             recebimento dupl.3383 zurica contabilidade150,53                   2                             
-3    15/07     13             recebimento dupl.3383 zurica contabilidade150,53                   2                             
-4    16/07     13             recebimento dupl.3383 zurica contabilidade150,53                   2                             
-5    17/07     13             recebimento dupl.3383 zurica contabilidade150,53                   2                             
-6    18/07     13             recebimento dupl.3383 zurica contabilidade150,53                   2                             
-7    19/07     13             recebimento dupl.3383 zurica contabilidade150,53                   2                             
-8    20/07     13             recebimento dupl.3383 zurica contabilidade150,53                   2                             
-9    21/07     13             recebimento dupl.3383 zurica contabilidade150,53                   2                             
-10   22/07     13             recebimento dupl.3383 zurica contabilidade150,53                   2                             
-11   23/07     13             recebimento dupl.3383 zurica contabilidade150,53                   2                             
+000000113/07    2    13000000000000000150.53    recebimento dupl.3383 zurica contabilidade
+000000214/07    2    13000000000000000150.53    recebimento dupl.3383 zurica contabilidade
+000000315/07    2    13000000000000000150.53    recebimento dupl.3383 zurica contabilidade
+000000416/07    2    13000000000000000150.53    recebimento dupl.3383 zurica contabilidade
+000000517/07    2    13000000000000000150.53    recebimento dupl.3383 zurica contabilidade
+000000618/07    2    13000000000000000150.53    recebimento dupl.3383 zurica contabilidade
+000000719/07    2    13000000000000000150.53    recebimento dupl.3383 zurica contabilidade
+000000820/07    2    13000000000000000150.53    recebimento dupl.3383 zurica contabilidade
+000000921/07    2    13000000000000000150.53    recebimento dupl.3383 zurica contabilidade
+000001022/07    2    13000000000000000150.53    recebimento dupl.3383 zurica contabilidade
+000001123/07    2    13000000000000000150.53    recebimento dupl.3383 zurica contabilidade
