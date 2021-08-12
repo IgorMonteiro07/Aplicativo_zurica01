@@ -102,28 +102,27 @@ def voltar_tela_abrir():
 def gerando_tab():
     if tela_escolhacpca.ESCOLHA01.isChecked():
         if os.path.exists('igor.txt'):
-            tabulacao_txt = open('igor.txt','r')
-            linhas = tabulacao_txt.read().split("\n")
-            if len(linhas)>0:
-                arquivo_tb = open('tb.txt',"wt")
-                for indice in range(len(linhas)):
-                    tentativa = linhas[indice].split(';')
-                    print(tentativa)
-                    data = tentativa[0]
-                    cliente=tentativa[1]
-                    historico = tentativa[2]
-                    valor = tentativa[3]
-                    banco = tentativa[4]
-                    arquivo_tb.write(str(indice+1).ljust(5))
-                    arquivo_tb.write(str(data).ljust(10))
-                    arquivo_tb.write(str(cliente).ljust(15))
-                    arquivo_tb.write(str(historico).ljust(20))
-                    arquivo_tb.write(str(valor).ljust(25))
-                    arquivo_tb.write(str(banco).ljust(30)+('\n'))
-                arquivo_tb.close()
-        
-        else:
-            print("Essa budega não gerou")
+        tabulacao_txt = open('igor.txt','r')
+    linhas = tabulacao_txt.read().split("\n")
+    if len(linhas)>0:
+        arquivo_tb = open('tb.txt',"wt")
+        for indice in range(len(linhas)):
+            tentativa = linhas[indice].split(';')
+            print(tentativa)
+            data = tentativa[0]
+            cliente=tentativa[1]
+            historico = tentativa[2]
+            valor = tentativa[3]
+            banco = tentativa[4]
+            arquivo_tb.write(str(indice+1).expandtabs(8).zfill(7))
+            arquivo_tb.write(str(data).expandtabs(9))
+            arquivo_tb.write(str(banco).rjust(5))
+            arquivo_tb.write(str(cliente).rjust(6))
+            arquivo_tb.write(str(valor).zfill(21).rjust(21).replace(",","."))
+            arquivo_tb.write(str("    "+historico).expandtabs(49)+('\n'))
+        arquivo_tb.close()
+else:
+    print("Essa budega não gerou")
 
     if tela_escolhacpca.ESCOLHA02.isChecked():
         print("ajuda")
