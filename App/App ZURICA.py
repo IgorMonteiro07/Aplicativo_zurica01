@@ -103,33 +103,28 @@ def gerando_tab():
     if tela_escolhacpca.ESCOLHA01.isChecked():
        if os.path.exists('igor.txt'):
         tabulacao_txt = open('igor.txt','r')
-        linhas = tabulacao_txt.read().split("\n")
-        try:
-            if len(linhas)>0:
-                arquivo_tb = open('tb.txt',"wt")
-                for indice in range(len(linhas)):
-                    tentativa = linhas[indice].split(';')
-                    print(tentativa)
-                    data = tentativa[0]
-                    cliente=tentativa[1]
-                    historico = tentativa[2]
-                    valor = tentativa[3]
-                    banco = tentativa[4]
-                    arquivo_tb.write(str(indice+1).expandtabs(8).zfill(7))
-                    arquivo_tb.write(str(data).expandtabs(9))
-                    arquivo_tb.write(str(banco).rjust(5))
-                    arquivo_tb.write(str(cliente).rjust(6))
-                    arquivo_tb.write(str(valor).zfill(21).rjust(21).replace(",","."))
-                    arquivo_tb.write(str("    "+historico).expandtabs(49)+('\n'))
-                arquivo_tb.close()
-            else:
-               print("Essa budega não gerou")
-        except:
-            print("meu deus")
-
-
-    if tela_escolhacpca.ESCOLHA02.isChecked():
-        print("ajuda")
+    linhas = tabulacao_txt.read().split("\n")
+    try:
+        if len(linhas)>0:
+            arquivo_tb = open('tb.txt',"wt")
+            for indice in range(len(linhas)):
+                tentativa = linhas[indice].split(';')
+                data = tentativa[0].lstrip()
+                cliente=tentativa[1].lstrip()
+                historico = tentativa[2].lstrip()
+                valor = tentativa[3].lstrip()
+                banco = tentativa[4]
+                arquivo_tb.write(str(indice+1).expandtabs(8).zfill(7))
+                arquivo_tb.write(str(data).expandtabs(9))
+                arquivo_tb.write(str(banco).rjust(9))
+                arquivo_tb.write(str(cliente).rjust(5))
+                arquivo_tb.write(str(valor).zfill(18).rjust(18).replace(",","."))
+                arquivo_tb.write(str("    "+historico).expandtabs(49)+('\n'))
+            arquivo_tb.close()
+        else:
+            print("Essa budega não gerou")
+    except:
+        print("mudança")
 
 
 
