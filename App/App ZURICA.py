@@ -129,8 +129,8 @@ def gerando_tab():
             print("mudança")
     if tela_escolhacpca.ESCOLHA01.isChecked():
         if os.path.exists('igor.txt'):
-        tabulacao_txt = open('igor.txt','r')
-        linhas = tabulacao_txt.read().split("\n")
+            tabulacao_txt = open('igor.txt','r')
+            linhas = tabulacao_txt.read().split("\n")
         try:
             arquivo_tb = open('tb.txt',"wt")
             if len(linhas)>0:
