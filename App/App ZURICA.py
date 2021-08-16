@@ -9,10 +9,10 @@ meubanco=mysql.connector.connect(
     passwd="",
     database="usuarios"
 )
-
-
-
-
+#-------------------------------------------------
+#-------------------------------------------------
+#-------------------------------------------------
+#-------------------------------------------------
 #FUNÇOES DO SISTEMA
 #Esta função tem como objetivo, de separar o acesso de admin ou user
 def escolha_usuario():
@@ -22,11 +22,18 @@ def escolha_usuario():
     if tela_escolha.ESCOLHA02.isChecked():
         tela_escolha.close()
         primeira_tela.show()
+#-------------------------------------------------
+#-------------------------------------------------
+#-------------------------------------------------
+#-------------------------------------------------
 #abertua e fechamento de tela
 def logar_sistema():
     tela_de_cadastro.close()
     primeira_tela.show()
-
+#-------------------------------------------------
+#-------------------------------------------------
+#-------------------------------------------------
+#-------------------------------------------------
 #valida no banco de dados se usuario pode logar no sistema.
 def logar_usuario():
     primeira_tela.label_5.setText("")
@@ -43,7 +50,10 @@ def logar_usuario():
             primeira_tela.label_5.setText("Dados digitados incorretos!!!")
     except:
          primeira_tela.label_5.setText("           Usúario invalido!!!")
-
+#-------------------------------------------------
+#-------------------------------------------------
+#-------------------------------------------------
+#-------------------------------------------------
 #Valida o acesso do usuario admin
 def logar_adm():
     tela_login_adm.escrita.setText("")
@@ -54,6 +64,10 @@ def logar_adm():
         tela_de_cadastro.show()
     else:
         tela_login_adm.escrita.setText("           Usúario invalido!!!")
+#-------------------------------------------------
+#-------------------------------------------------
+#-------------------------------------------------
+#-------------------------------------------------
 #faz o cadastro do usuario via banco de dados
 def cadastro():
     c_nome = tela_de_cadastro.nomeint.text()
@@ -72,6 +86,10 @@ def cadastro():
             print("erro")
     else:
         QMessageBox.about(tela_de_cadastro, "ALERTA", "Não atendeu os criterios de cadastro ou campo vazio!!!")
+#-------------------------------------------------
+#-------------------------------------------------
+#-------------------------------------------------
+#-------------------------------------------------
 #carrega a planilha para um arquivo txt a qual vai ser tabulado
 def carrega_plan():
     tela_abrir.label.setText("")
@@ -86,28 +104,42 @@ def carrega_plan():
         tela_abrir.label.setText(arquivo)
     except:
         print("erro")
+#-------------------------------------------------
+#-------------------------------------------------
+#-------------------------------------------------
+#-------------------------------------------------
 #abre e fecha tela
 def escolha_cpca():
     tela_abrir.close()
     tela_escolhacpca.show()
-
-#volta ao login
+#-------------------------------------------------
+#-------------------------------------------------
+#-------------------------------------------------
+#-------------------------------------------------
+#abre e fecha tela
 def voltar_tela_login():
     tela_abrir.close()
     primeira_tela.show()
-
+#-------------------------------------------------
+#-------------------------------------------------
+#-------------------------------------------------
+#-------------------------------------------------
+#abre fecha tela
 def voltar_tela_abrir():
     tela_escolhacpca.close()
     tela_abrir.show()
-
-
+#-------------------------------------------------
+#-------------------------------------------------
+#-------------------------------------------------
+#-------------------------------------------------
+#faz a tabulação do arquivo txt tanto do arquivo a pagar como o a receber
 def gerando_tab():
     if tela_escolhacpca.ESCOLHA02.isChecked():
        if os.path.exists('igor.txt'):
         tabulacao_txt = open('igor.txt','r')
         linhas = tabulacao_txt.read().split("\n")
         try:
-            arquivo_tb = open('tb.txt',"wt")
+            arquivo_tb = open('clientetab.txt',"wt")
             if len(linhas)>0:
                 for indice in range(len(linhas)):
                     tentativa = linhas[indice].split(';')
@@ -127,12 +159,14 @@ def gerando_tab():
                 print('erro')
         except:
             print("mudança")
+            tela_escolhacpca.close()
+            tela_nome.show()
     if tela_escolhacpca.ESCOLHA01.isChecked():
         if os.path.exists('igor.txt'):
             tabulacao_txt = open('igor.txt','r')
             linhas = tabulacao_txt.read().split("\n")
         try:
-            arquivo_tb = open('tb.txt',"wt")
+            arquivo_tb = open('fornecedortb.txt',"wt")
             if len(linhas)>0:
                 for indice in range(len(linhas)):
                     tentativa = linhas[indice].split(';')
@@ -152,15 +186,35 @@ def gerando_tab():
                 print('erro')
         except:
             print("mudança")
-    
+            tela_escolhacpca.close()
+            tela_nome.show()
+#-------------------------------------------------
+#-------------------------------------------------
+#-------------------------------------------------
+#------------------------------------------------- 
+#abre e fecha e tela
+def voltar_nome(): 
+    tela_nome.close()
+    tela_escolhacpca.show()
+#-------------------------------------------------
+#-------------------------------------------------
+#-------------------------------------------------
+#------------------------------------------------- 
+def mudar_nome():
+    nome_arq = tela_nome.nomel.text()
+    print(nome_arq)
 
 
-
+#-------------------------------------------------
+#-------------------------------------------------
+#-------------------------------------------------
+#------------------------------------------------- 
 #MODULO GRAFICO UTILIZADO
 aplicativo = QtWidgets.QApplication([])
-
-
-
+#-------------------------------------------------
+#-------------------------------------------------
+#-------------------------------------------------
+#-------------------------------------------------
 #IMPORTAÇÃO DA TELAS
 tela_escolha = uic.loadUi("tela_escolha.ui")
 tela_login_adm=uic.loadUi("tela_login_adm.ui")
@@ -168,9 +222,11 @@ primeira_tela=uic.loadUi("primeira_tela.ui")
 tela_de_cadastro=uic.loadUi("tela_de_cadastro.ui")
 tela_abrir=uic.loadUi("tela_abrir.ui")
 tela_escolhacpca=uic.loadUi("tela_escolhacpca.ui")
-
-
-
+tela_nome=uic.loadUi("tela_nome.ui")
+#-------------------------------------------------
+#-------------------------------------------------
+#-------------------------------------------------
+#-------------------------------------------------
 #INTERAÇÃO COM OS  BOTÕES DAS TELAS
 tela_escolha.botaoescolha.clicked.connect(escolha_usuario)
 tela_login_adm.entrar.clicked.connect(logar_adm)
@@ -182,10 +238,12 @@ tela_abrir.abrir.clicked.connect(carrega_plan)
 tela_abrir.pt.clicked.connect(escolha_cpca)
 tela_escolhacpca.voltar.clicked.connect(voltar_tela_abrir)
 tela_escolhacpca.botaoescolha.clicked.connect(gerando_tab)
-
-
-
-
+tela_nome.antl.clicked.connect(voltar_nome)
+tela_nome.pt.clicked.connect(mudar_nome)
+#-------------------------------------------------
+#-------------------------------------------------
+#-------------------------------------------------
+#-------------------------------------------------
 tela_escolha.show()
 aplicativo.exec()
 
