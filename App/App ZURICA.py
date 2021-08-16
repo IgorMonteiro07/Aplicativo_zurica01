@@ -128,7 +128,30 @@ def gerando_tab():
         except:
             print("mudança")
     if tela_escolhacpca.ESCOLHA01.isChecked():
-        print("boa sorte")
+        if os.path.exists('igor.txt'):
+        tabulacao_txt = open('igor.txt','r')
+        linhas = tabulacao_txt.read().split("\n")
+        try:
+            arquivo_tb = open('tb.txt',"wt")
+            if len(linhas)>0:
+                for indice in range(len(linhas)):
+                    tentativa = linhas[indice].split(';')
+                    data = tentativa[0].lstrip()
+                    fornecedor=tentativa[1].lstrip()
+                    historico = tentativa[2].lstrip()
+                    valor = tentativa[3].lstrip().replace(".","")
+                    banco = tentativa[4]
+                    arquivo_tb.write(str(indice+1).expandtabs(8).zfill(7))
+                    arquivo_tb.write(str(data).expandtabs(9))
+                    arquivo_tb.write(str(fornecedor).rjust(7))
+                    arquivo_tb.write(str(banco).rjust(7))
+                    arquivo_tb.write(str(valor).zfill(18).rjust(18).replace(",","."))
+                    arquivo_tb.write(str("    "+historico).expandtabs(49)+('\n'))
+                arquivo_tb.close()
+            else:
+                print('erro')
+        except:
+            print("mudança")
     
 
 
