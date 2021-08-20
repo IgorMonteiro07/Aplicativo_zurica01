@@ -1,5 +1,6 @@
 #conexão do banco de dados
 import os
+import shutil
 import mysql.connector # modulo que faz coneção com mysql
 from PyQt5 import uic,QtWidgets # MODULO GRAFICO UTILIZADO
 from PyQt5.QtWidgets import QMessageBox
@@ -209,13 +210,18 @@ def mudar_nome():
 
     tela_nome.close()
     tela_final.show()
-
-
-    
 #-------------------------------------------------
 #-------------------------------------------------
 #-------------------------------------------------
 #------------------------------------------------- 
+def dowload():
+    print('teste')
+
+def novo():
+    print('novo')
+
+
+
 #MODULO GRAFICO UTILIZADO
 aplicativo = QtWidgets.QApplication([])
 #-------------------------------------------------
@@ -248,6 +254,8 @@ tela_escolhacpca.voltar.clicked.connect(voltar_tela_abrir)
 tela_escolhacpca.botaoescolha.clicked.connect(gerando_tab)
 tela_nome.antl.clicked.connect(voltar_nome)
 tela_nome.pt.clicked.connect(mudar_nome)
+tela_final.dow.clicked.connect(dowload)
+tela_final.new_2.clicked.connect(novo)
 #-------------------------------------------------
 #-------------------------------------------------
 #-------------------------------------------------

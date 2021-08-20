@@ -24,7 +24,7 @@
    <string notr="true">background-color: rgb(255, 255, 255);</string>
   </property>
   <widget class="QWidget" name="centralwidget">
-   <widget class="QPushButton" name="entrar">
+   <widget class="QPushButton" name="dow">
     <property name="geometry">
      <rect>
       <x>160</x>
@@ -67,7 +67,7 @@ border-color:black;</string>
      <pixmap>logo.jpg</pixmap>
     </property>
    </widget>
-   <widget class="QPushButton" name="entrar_2">
+   <widget class="QPushButton" name="new_2">
     <property name="geometry">
      <rect>
       <x>160</x>
@@ -111,8 +111,8 @@ border-color:black;</string>
     </property>
    </widget>
    <zorder>label_4</zorder>
-   <zorder>entrar</zorder>
-   <zorder>entrar_2</zorder>
+   <zorder>dow</zorder>
+   <zorder>new_2</zorder>
    <zorder>label_2</zorder>
   </widget>
   <widget class="QMenuBar" name="menubar">
