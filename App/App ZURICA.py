@@ -1,6 +1,8 @@
 #conexão do banco de dados
+from genericpath import exists
 import os
 import shutil
+import sys
 import mysql.connector # modulo que faz coneção com mysql
 from PyQt5 import uic,QtWidgets # MODULO GRAFICO UTILIZADO
 from PyQt5.QtWidgets import QMessageBox
@@ -203,10 +205,13 @@ def voltar_nome():
 #------------------------------------------------- 
 def mudar_nome():
     nome_arq = tela_nome.nomel.text()
-    
-
-
-    os.rename("E:\\Projeto integrador\\Aplicativo_zurica\\App\\tabulação.txt","E:\\Projeto integrador\\Aplicativo_zurica\\App\\arquivo final\\{}.M21".format(nome_arq.upper()))
+    nova_pasta =r"E:\\Projeto integrador\\Aplicativo_zurica\\App\\arquivo final"
+    if not os.path.exists(nova_pasta):
+        os.makedirs(nova_pasta)
+    try:
+         os.rename(r"E:\\Projeto integrador\\Aplicativo_zurica\\App\\tabulação.txt",r"E:\\Projeto integrador\\Aplicativo_zurica\\App\\arquivo final\\{}.M21".format(nome_arq.upper()))
+    except:
+        print('eureka')
 
     tela_nome.close()
     tela_final.show()
@@ -215,13 +220,25 @@ def mudar_nome():
 #-------------------------------------------------
 #------------------------------------------------- 
 def dowload():
-    print('teste')
-
+    teste =r"C:\Users\Igor Monteiro\Downloads\Arquivo final"
+    try:
+        shutil.rmtree(teste)
+    except OSError as e:
+        print(e)
+    
+    origem = r"E:\\Projeto integrador\\Aplicativo_zurica\\App\\Arquivo final"
+    destino = r"C:\\Users\\Igor Monteiro\\Downloads"
+    shutil.move(origem,destino)
+#-------------------------------------------------
+#-------------------------------------------------
+#-------------------------------------------------
+#-------------------------------------------------
 def novo():
     print('novo')
-
-
-
+#-------------------------------------------------
+#-------------------------------------------------
+#-------------------------------------------------
+#-------------------------------------------------
 #MODULO GRAFICO UTILIZADO
 aplicativo = QtWidgets.QApplication([])
 #-------------------------------------------------
