@@ -139,7 +139,7 @@ def gerando_tab():
         tabulacao_txt = open('igor.txt','r')
         linhas = tabulacao_txt.read().split("\n")
         try:
-            arquivo_tb = open('clientetab.txt',"wt")
+            arquivo_tb = open('tabulação.txt',"wt")
             if len(linhas)>0:
                 for indice in range(len(linhas)):
                     tentativa = linhas[indice].split(';')
@@ -166,7 +166,7 @@ def gerando_tab():
             tabulacao_txt = open('igor.txt','r')
             linhas = tabulacao_txt.read().split("\n")
         try:
-            arquivo_tb = open('fornecedortb.txt',"wt")
+            arquivo_tb = open('tabulação.txt',"wt")
             if len(linhas)>0:
                 for indice in range(len(linhas)):
                     tentativa = linhas[indice].split(';')
@@ -202,9 +202,16 @@ def voltar_nome():
 #------------------------------------------------- 
 def mudar_nome():
     nome_arq = tela_nome.nomel.text()
-    print(nome_arq)
+    
 
 
+    os.rename("E:\\Projeto integrador\\Aplicativo_zurica\\App\\tabulação.txt","E:\\Projeto integrador\\Aplicativo_zurica\\App\\arquivo final\\{}.M21".format(nome_arq.upper()))
+
+    tela_nome.close()
+    tela_final.show()
+
+
+    
 #-------------------------------------------------
 #-------------------------------------------------
 #-------------------------------------------------
@@ -223,6 +230,7 @@ tela_de_cadastro=uic.loadUi("tela_de_cadastro.ui")
 tela_abrir=uic.loadUi("tela_abrir.ui")
 tela_escolhacpca=uic.loadUi("tela_escolhacpca.ui")
 tela_nome=uic.loadUi("tela_nome.ui")
+tela_final=uic.loadUi("download.ui")
 #-------------------------------------------------
 #-------------------------------------------------
 #-------------------------------------------------
