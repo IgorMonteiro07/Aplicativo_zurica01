@@ -203,6 +203,7 @@ def voltar_nome():
 #-------------------------------------------------
 #-------------------------------------------------
 #------------------------------------------------- 
+# renomea o arquivo e muda a instensão do arquivo txt e muda seu diretorio
 def mudar_nome():
     nome_arq = tela_nome.nomel.text()
     nova_pasta =r"E:\\Projeto integrador\\Aplicativo_zurica\\App\\arquivo final"
@@ -215,26 +216,32 @@ def mudar_nome():
 
     tela_nome.close()
     tela_final.show()
-#-------------------------------------------------
-#-------------------------------------------------
-#-------------------------------------------------
-#------------------------------------------------- 
-def dowload():
     teste =r"C:\Users\Igor Monteiro\Downloads\Arquivo final"
     try:
         shutil.rmtree(teste)
     except OSError as e:
         print(e)
-    
-    origem = r"E:\\Projeto integrador\\Aplicativo_zurica\\App\\Arquivo final"
-    destino = r"C:\\Users\\Igor Monteiro\\Downloads"
-    shutil.move(origem,destino)
 #-------------------------------------------------
 #-------------------------------------------------
 #-------------------------------------------------
 #-------------------------------------------------
+# muda pra pasta de download  
+def dowload():
+    try:
+        origem = r"E:\\Projeto integrador\\Aplicativo_zurica\\App\\Arquivo final"
+        destino = r"C:\\Users\\Igor Monteiro\\Downloads"
+        shutil.move(origem,destino)
+        QMessageBox.about(tela_final, "ALERTA", "Download feito com sucesso na pasta arquivo final!!!")
+    except:
+        QMessageBox.about(tela_final, "ALERTA", "Download feito com sucesso na pasta arquivo final!!!")
+#------------------------------------------------- 
+#-------------------------------------------------
+#-------------------------------------------------
+#-------------------------------------------------
+#reinicia o processo
 def novo():
-    print('novo')
+    tela_final.close()
+    tela_abrir.show()
 #-------------------------------------------------
 #-------------------------------------------------
 #-------------------------------------------------
