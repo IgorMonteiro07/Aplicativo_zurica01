@@ -156,7 +156,7 @@ def gerando_tab():
                     arquivo_tb.write(str(banco).rjust(7))
                     arquivo_tb.write(str(cliente).rjust(7))
                     arquivo_tb.write(str(valor).zfill(18).rjust(18).replace(",","."))
-                    arquivo_tb.write(str("    "+historico).expandtabs(49)+('\n'))
+                    arquivo_tb.write(str("    "+historico).rjust(4)+('\n'))
                 arquivo_tb.close()
             else:
                 print('erro')
@@ -183,7 +183,7 @@ def gerando_tab():
                     arquivo_tb.write(str(fornecedor).rjust(7))
                     arquivo_tb.write(str(banco).rjust(7))
                     arquivo_tb.write(str(valor).zfill(18).rjust(18).replace(",","."))
-                    arquivo_tb.write(str("    "+historico).expandtabs(49)+('\n'))
+                    arquivo_tb.write(str("    "+historico).rjust(4)+('\n'))
                 arquivo_tb.close()
             else:
                 print('erro')
