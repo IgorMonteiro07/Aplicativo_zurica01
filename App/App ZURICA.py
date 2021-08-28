@@ -106,7 +106,7 @@ def carrega_plan():
                 registros.write(dado)
         tela_abrir.label.setText(arquivo)
     except:
-        print("erro")
+        print("voltou")
 #-------------------------------------------------
 #-------------------------------------------------
 #-------------------------------------------------
@@ -151,17 +151,17 @@ def gerando_tab():
                     historico = tentativa[2].lstrip()
                     valor = tentativa[3].lstrip().replace(".","")
                     banco = tentativa[4]
-                    arquivo_tb.write(str(indice+1).expandtabs(8).zfill(7))
+                    arquivo_tb.write(str(indice+1).expandtabs(7).zfill(7))
                     arquivo_tb.write(str(data).expandtabs(9))
                     arquivo_tb.write(str(banco).rjust(7))
                     arquivo_tb.write(str(cliente).rjust(7))
-                    arquivo_tb.write(str(valor).zfill(18).rjust(18).replace(",","."))
-                    arquivo_tb.write(str("    "+historico).rjust(4)+('\n'))
+                    arquivo_tb.write(str(valor).zfill(17).rjust(17).replace(",","."))
+                    arquivo_tb.write(str("00143"+historico).expandtabs(2).zfill(2)+('\n'))
                 arquivo_tb.close()
             else:
                 print('erro')
         except:
-            print("mudança")
+            print("gerou")
             tela_escolhacpca.close()
             tela_nome.show()
     if tela_escolhacpca.ESCOLHA01.isChecked():
@@ -178,17 +178,17 @@ def gerando_tab():
                     historico = tentativa[2].lstrip()
                     valor = tentativa[3].lstrip().replace(".","")
                     banco = tentativa[4]
-                    arquivo_tb.write(str(indice+1).expandtabs(8).zfill(7))
+                    arquivo_tb.write(str(indice+1).expandtabs(7).zfill(7))
                     arquivo_tb.write(str(data).expandtabs(9))
                     arquivo_tb.write(str(fornecedor).rjust(7))
                     arquivo_tb.write(str(banco).rjust(7))
-                    arquivo_tb.write(str(valor).zfill(18).rjust(18).replace(",","."))
-                    arquivo_tb.write(str("    "+historico).rjust(4)+('\n'))
+                    arquivo_tb.write(str(valor).zfill(17).rjust(17).replace(",","."))
+                    arquivo_tb.write(str("00143"+historico).expandtabs(2).zfill(2)+('\n'))
                 arquivo_tb.close()
             else:
                 print('erro')
         except:
-            print("mudança")
+            print("gerou")
             tela_escolhacpca.close()
             tela_nome.show()
 #-------------------------------------------------
@@ -212,7 +212,7 @@ def mudar_nome():
     try:
          os.rename(r"E:\\Projeto integrador\\Aplicativo_zurica\\App\\tabulação.txt",r"E:\\Projeto integrador\\Aplicativo_zurica\\App\\arquivo final\\{}.M21".format(nome_arq.upper()))
     except:
-        print('eureka')
+        print('erro')
 
     tela_nome.close()
     tela_final.show()
