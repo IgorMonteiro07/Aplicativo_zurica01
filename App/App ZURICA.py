@@ -183,7 +183,7 @@ def gerando_tab():
                     arquivo_tb.write(str(fornecedor).rjust(7))
                     arquivo_tb.write(str(banco).rjust(7))
                     arquivo_tb.write(str(valor).zfill(17).rjust(17).replace(",","."))
-                    arquivo_tb.write(str("00143"+historico).expandtabs(2).zfill(2)+('\n'))
+                    arquivo_tb.write(str("00155"+historico).expandtabs(2).zfill(2)+('\n'))
                 arquivo_tb.close()
             else:
                 print('erro')
