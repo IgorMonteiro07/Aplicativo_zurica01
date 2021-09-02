@@ -91,14 +91,12 @@ border-color:black;</string>
      <string/>
     </property>
     <property name="pixmap">
-     <pixmap>C:/Users/Igor Monteiro/Desktop/logo/288x288.png</pixmap>
+     <pixmap>288x288.png</pixmap>
     </property>
    </widget>
   </widget>
   <widget class="QStatusBar" name="statusbar"/>
  </widget>
- <resources>
-  <include location="../test.qrc"/>
- </resources>
+ <resources/>
  <connections/>
 </ui>
