@@ -6,8 +6,8 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>464</width>
-    <height>534</height>
+    <width>450</width>
+    <height>450</height>
    </rect>
   </property>
   <property name="font">
@@ -21,16 +21,16 @@
    <string>MainWindow</string>
   </property>
   <property name="styleSheet">
-   <string notr="true">background-color: rgb(255, 255, 255);</string>
+   <string notr="true">background-color: #00c4cc;</string>
   </property>
   <widget class="QWidget" name="centralwidget">
    <widget class="QPushButton" name="entrar">
     <property name="geometry">
      <rect>
-      <x>150</x>
-      <y>290</y>
-      <width>141</width>
-      <height>41</height>
+      <x>170</x>
+      <y>310</y>
+      <width>131</width>
+      <height>31</height>
      </rect>
     </property>
     <property name="font">
@@ -41,7 +41,7 @@
      </font>
     </property>
     <property name="styleSheet">
-     <string notr="true">background-color: rgb(255, 255, 255);
+     <string notr="true">background-color: #00c4cc;
 border-radius:15px;
 border-style:outset;
 border-width:2px;
@@ -54,7 +54,7 @@ border-color:black;</string>
    <widget class="QLineEdit" name="nomel">
     <property name="geometry">
      <rect>
-      <x>140</x>
+      <x>150</x>
       <y>160</y>
       <width>161</width>
       <height>31</height>
@@ -68,7 +68,7 @@ border-color:black;</string>
      </font>
     </property>
     <property name="styleSheet">
-     <string notr="true">background-color: rgb(255, 255, 255);
+     <string notr="true">background-color: #00c4cc;
 border-radius:15px;
 border-style:outset;
 border-width:2px;
@@ -78,8 +78,8 @@ border-color:black;</string>
    <widget class="QLineEdit" name="senhal">
     <property name="geometry">
      <rect>
-      <x>140</x>
-      <y>210</y>
+      <x>150</x>
+      <y>200</y>
       <width>161</width>
       <height>31</height>
      </rect>
@@ -92,7 +92,7 @@ border-color:black;</string>
      </font>
     </property>
     <property name="styleSheet">
-     <string notr="true">background-color: rgb(255, 255, 255);
+     <string notr="true">background-color: #00c4cc;
 border-radius:15px;
 border-style:outset;
 border-width:2px;</string>
@@ -121,7 +121,7 @@ border-width:2px;</string>
     <property name="geometry">
      <rect>
       <x>110</x>
-      <y>210</y>
+      <y>200</y>
       <width>31</width>
       <height>31</height>
      </rect>
@@ -136,8 +136,8 @@ border-width:2px;</string>
    <widget class="QLabel" name="label_4">
     <property name="geometry">
      <rect>
-      <x>70</x>
-      <y>10</y>
+      <x>30</x>
+      <y>20</y>
       <width>311</width>
       <height>121</height>
      </rect>
@@ -146,14 +146,14 @@ border-width:2px;</string>
      <string/>
     </property>
     <property name="pixmap">
-     <pixmap>logo.jpg</pixmap>
+     <pixmap>LOGO.png</pixmap>
     </property>
    </widget>
    <widget class="QLabel" name="escrita">
     <property name="geometry">
      <rect>
       <x>70</x>
-      <y>250</y>
+      <y>260</y>
       <width>321</width>
       <height>31</height>
      </rect>
@@ -169,6 +169,26 @@ border-width:2px;</string>
      <string/>
     </property>
    </widget>
+   <widget class="QLabel" name="label">
+    <property name="geometry">
+     <rect>
+      <x>110</x>
+      <y>0</y>
+      <width>231</width>
+      <height>41</height>
+     </rect>
+    </property>
+    <property name="font">
+     <font>
+      <pointsize>12</pointsize>
+      <weight>75</weight>
+      <bold>true</bold>
+     </font>
+    </property>
+    <property name="text">
+     <string>Bem vindo Administrador</string>
+    </property>
+   </widget>
    <zorder>label_4</zorder>
    <zorder>label_2</zorder>
    <zorder>label_3</zorder>
@@ -176,6 +196,7 @@ border-width:2px;</string>
    <zorder>nomel</zorder>
    <zorder>senhal</zorder>
    <zorder>escrita</zorder>
+   <zorder>label</zorder>
   </widget>
   <widget class="QStatusBar" name="statusbar"/>
  </widget>

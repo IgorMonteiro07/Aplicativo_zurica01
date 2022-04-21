@@ -6,8 +6,8 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>464</width>
-    <height>542</height>
+    <width>450</width>
+    <height>450</height>
    </rect>
   </property>
   <property name="font">
@@ -21,7 +21,7 @@
    <string>MainWindow</string>
   </property>
   <property name="styleSheet">
-   <string notr="true">background-color: rgb(255, 255, 255);</string>
+   <string notr="true">background-color: #00c4cc;</string>
   </property>
   <widget class="QWidget" name="centralwidget">
    <widget class="QLineEdit" name="nomeint">
@@ -39,7 +39,7 @@
      </font>
     </property>
     <property name="styleSheet">
-     <string notr="true">background-color: rgb(255, 255, 255);
+     <string notr="true">background-color: #00c4cc;
 border-radius:15px;
 border-style:outset;
 border-width:2px;</string>
@@ -63,7 +63,7 @@ border-width:2px;</string>
      </font>
     </property>
     <property name="styleSheet">
-     <string notr="true">background-color: rgb(255, 255, 255);
+     <string notr="true">background-color: #00c4cc;
 border-radius:15px;
 border-style:outset;
 border-width:2px;</string>
@@ -87,7 +87,7 @@ border-width:2px;</string>
      </font>
     </property>
     <property name="styleSheet">
-     <string notr="true">background-color: rgb(255, 255, 255);
+     <string notr="true">background-color: #00c4cc;
 border-radius:15px;
 border-style:outset;
 border-width:2px;</string>
@@ -114,7 +114,7 @@ border-width:2px;</string>
      </font>
     </property>
     <property name="styleSheet">
-     <string notr="true">background-color: rgb(255, 255, 255);
+     <string notr="true">background-color: #00c4cc;
 border-radius:15px;
 border-style:outset;
 border-width:2px;</string>
@@ -131,8 +131,8 @@ border-width:2px;</string>
      <rect>
       <x>260</x>
       <y>390</y>
-      <width>141</width>
-      <height>41</height>
+      <width>131</width>
+      <height>31</height>
      </rect>
     </property>
     <property name="font">
@@ -143,7 +143,7 @@ border-width:2px;</string>
      </font>
     </property>
     <property name="styleSheet">
-     <string notr="true">background-color: rgb(255, 255, 255);
+     <string notr="true">background-color: #00c4cc;
 border-radius:15px;
 border-style:outset;
 border-width:2px;
@@ -158,8 +158,8 @@ border-color:black;</string>
      <rect>
       <x>60</x>
       <y>390</y>
-      <width>141</width>
-      <height>41</height>
+      <width>131</width>
+      <height>31</height>
      </rect>
     </property>
     <property name="font">
@@ -170,7 +170,7 @@ border-color:black;</string>
      </font>
     </property>
     <property name="styleSheet">
-     <string notr="true">background-color: rgb(255, 255, 255);
+     <string notr="true">background-color: #00c4cc;
 border-radius:15px;
 border-style:outset;
 border-width:2px;
@@ -183,17 +183,20 @@ border-color:black;</string>
    <widget class="QLabel" name="label_4">
     <property name="geometry">
      <rect>
-      <x>80</x>
+      <x>30</x>
       <y>0</y>
-      <width>281</width>
+      <width>371</width>
       <height>121</height>
      </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true"/>
     </property>
     <property name="text">
      <string/>
     </property>
     <property name="pixmap">
-     <pixmap>logo.jpg</pixmap>
+     <pixmap>LOGO.png</pixmap>
     </property>
    </widget>
   </widget>

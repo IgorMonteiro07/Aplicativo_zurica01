@@ -10,7 +10,7 @@ meubanco=mysql.connector.connect(
     host="localhost",
     user="root",
     passwd="",
-    database="usuarios"
+    database="cadastrod"
 )
 #-------------------------------------------------
 #-------------------------------------------------
@@ -44,15 +44,15 @@ def logar_usuario():
     senha_user = primeira_tela.senhal.text()
     cursor = meubanco.cursor()
     try:
-        cursor.execute("SELECT senha FROM cadastro WHERE login = '{}'".format(nome_user))
+        cursor.execute("SELECT senha FROM zurica WHERE login = '{}'".format(nome_user))
         senha_bf = cursor.fetchall()
         if senha_user == senha_bf[0][0]:
             primeira_tela.close()
             tela_abrir.show()
         else:
-            primeira_tela.label_5.setText("Dados digitados incorretos!!!")
+            primeira_tela.label_5.setText("            Usúario invalido!!!")
     except:
-         primeira_tela.label_5.setText("           Usúario invalido!!!")
+         primeira_tela.label_5.setText("            Usúario invalido!!!")
 #-------------------------------------------------
 #-------------------------------------------------
 #-------------------------------------------------
@@ -80,7 +80,7 @@ def cadastro():
     if (c_senha1 == c_senha2) and len(c_senha1) > 3 and len(c_nome) > 3 and len(c_login) > 3:
         try:
             cursor = meubanco.cursor()
-            comando_sql = "insert into cadastro(nome,login,senha)values(%s,%s,%s)"
+            comando_sql = "insert into zurica(nome,login,senha)values(%s,%s,%s)"
             dados = (f"{c_nome}", f"{c_login}", f"{c_senha1}")
             cursor.execute(comando_sql, dados)
             meubanco.commit()

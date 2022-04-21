@@ -6,8 +6,8 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>464</width>
-    <height>517</height>
+    <width>450</width>
+    <height>450</height>
    </rect>
   </property>
   <property name="font">
@@ -19,7 +19,7 @@
    <string>MainWindow</string>
   </property>
   <property name="styleSheet">
-   <string notr="true">background-color: rgb(255, 255, 255);</string>
+   <string notr="true">background-color: #00c4cc;</string>
   </property>
   <widget class="QWidget" name="centralwidget">
    <widget class="QRadioButton" name="ESCOLHA01">
@@ -37,6 +37,9 @@
       <weight>75</weight>
       <bold>true</bold>
      </font>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">background-color: #00c4cc;</string>
     </property>
     <property name="text">
      <string>Contas a pagar</string>
@@ -67,8 +70,8 @@
      <rect>
       <x>260</x>
       <y>390</y>
-      <width>141</width>
-      <height>41</height>
+      <width>161</width>
+      <height>31</height>
      </rect>
     </property>
     <property name="font">
@@ -79,7 +82,7 @@
      </font>
     </property>
     <property name="styleSheet">
-     <string notr="true">background-color: rgb(255, 255, 255);
+     <string notr="true">background-color: #00c4cc;
 border-radius:15px;
 border-style:outset;
 border-width:2px;
@@ -92,9 +95,9 @@ border-color:black;</string>
    <widget class="QLabel" name="label">
     <property name="geometry">
      <rect>
-      <x>70</x>
+      <x>30</x>
       <y>20</y>
-      <width>291</width>
+      <width>371</width>
       <height>121</height>
      </rect>
     </property>
@@ -102,7 +105,7 @@ border-color:black;</string>
      <string/>
     </property>
     <property name="pixmap">
-     <pixmap>logo.jpg</pixmap>
+     <pixmap>LOGO.png</pixmap>
     </property>
    </widget>
    <widget class="QLabel" name="label_2">
@@ -121,10 +124,10 @@ border-color:black;</string>
    <widget class="QPushButton" name="voltar">
     <property name="geometry">
      <rect>
-      <x>40</x>
+      <x>30</x>
       <y>390</y>
-      <width>141</width>
-      <height>41</height>
+      <width>161</width>
+      <height>31</height>
      </rect>
     </property>
     <property name="font">
@@ -135,7 +138,7 @@ border-color:black;</string>
      </font>
     </property>
     <property name="styleSheet">
-     <string notr="true">background-color: rgb(255, 255, 255);
+     <string notr="true">background-color: #00c4cc;
 border-radius:15px;
 border-style:outset;
 border-width:2px;
