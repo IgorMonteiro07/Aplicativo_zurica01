@@ -113,7 +113,7 @@ def carrega_plan():
 #-------------------------------------------------
 #abre e fecha tela
 def escolha_cpca():
-    tela_abrir.close()
+    tela_escolha_ordem.close()
     tela_escolhacpca.show()
 #-------------------------------------------------
 #-------------------------------------------------
@@ -128,15 +128,35 @@ def voltar_tela_login():
 #-------------------------------------------------
 #-------------------------------------------------
 #abre fecha tela
+def proxima_tela_abrir():
+    tela_abrir.close()
+    tela_escolha_ordem.show()
+
 def voltar_tela_abrir():
-    tela_escolhacpca.close()
+    tela_escolha_ordem.close()
     tela_abrir.show()
+    
+    
+def coluna_valor():
+    global e_data,e_banco,e_historico,e_conta,e_valor
+    e_data = tela_escolha_ordem.data1.value()
+    e_banco = tela_escolha_ordem.banco1.value()
+    e_conta = tela_escolha_ordem.conta1.value()
+    e_valor = tela_escolha_ordem.valor1.value()
+    e_historico = tela_escolha_ordem.historico.value()
+    if e_data != e_banco and e_conta and e_historico and e_valor:
+        tela_escolha_ordem.close()
+        tela_escolhacpca.show()
+    else:
+      QMessageBox.about(tela_escolhacpca, "ALERTA", "posições das colunas incorretas")
+ 
 #-------------------------------------------------
 #-------------------------------------------------
 #-------------------------------------------------
 #-------------------------------------------------
 #faz a tabulação do arquivo txt tanto do arquivo a pagar como o a receber
 def gerando_tab():
+    global e_conta,e_banco,e_data,e_historico,e_valor
     if tela_escolhacpca.ESCOLHA02.isChecked():
        if os.path.exists('igor.txt'):
         tabulacao_txt = open('igor.txt','r')
@@ -146,11 +166,11 @@ def gerando_tab():
             if len(linhas)>0:
                 for indice in range(len(linhas)):
                     tentativa = linhas[indice].split(';')
-                    data = tentativa[0].lstrip()
-                    cliente=tentativa[1].lstrip()
-                    historico = tentativa[2].lstrip()
-                    valor = tentativa[3].lstrip().replace(".","")
-                    banco = tentativa[4]
+                    data = tentativa[e_data].lstrip()
+                    cliente=tentativa[e_conta].lstrip()
+                    historico = tentativa[e_historico].lstrip()
+                    valor = tentativa[e_valor].lstrip().replace(".","")
+                    banco = tentativa[e_banco]
                     arquivo_tb.write(str(indice+1).expandtabs(7).zfill(7))
                     arquivo_tb.write(str(data).expandtabs(9))
                     arquivo_tb.write(str(banco).rjust(7))
@@ -159,7 +179,7 @@ def gerando_tab():
                     arquivo_tb.write(str("00143"+historico).expandtabs(2).zfill(2)+('\n'))
                 arquivo_tb.close()
             else:
-                print('erro')
+                QMessageBox.about(tela_escolhacpca, "ALERTA", "Posiçoes das colunas incorretas,voltar a tela anterior")
         except:
             print("gerou")
             tela_escolhacpca.close()
@@ -173,11 +193,11 @@ def gerando_tab():
             if len(linhas)>0:
                 for indice in range(len(linhas)):
                     tentativa = linhas[indice].split(';')
-                    data = tentativa[0].lstrip()
-                    fornecedor=tentativa[1].lstrip()
-                    historico = tentativa[2].lstrip()
-                    valor = tentativa[3].lstrip().replace(".","")
-                    banco = tentativa[4]
+                    data = tentativa[e_data].lstrip()
+                    fornecedor=tentativa[e_conta].lstrip()
+                    historico = tentativa[e_historico].lstrip()
+                    valor = tentativa[e_valor].lstrip().replace(".","")
+                    banco = tentativa[e_banco]
                     arquivo_tb.write(str(indice+1).expandtabs(7).zfill(7))
                     arquivo_tb.write(str(data).expandtabs(9))
                     arquivo_tb.write(str(fornecedor).rjust(7))
@@ -261,6 +281,7 @@ tela_abrir=uic.loadUi("tela_abrir.ui")
 tela_escolhacpca=uic.loadUi("tela_escolhacpca.ui")
 tela_nome=uic.loadUi("tela_nome.ui")
 tela_final=uic.loadUi("download.ui")
+tela_escolha_ordem=uic.loadUi("tela_escolhaORDEM.ui")
 #-------------------------------------------------
 #-------------------------------------------------
 #-------------------------------------------------
@@ -273,13 +294,15 @@ tela_de_cadastro.cadastro.clicked.connect(cadastro)
 tela_de_cadastro.pushButton_2.clicked.connect(logar_sistema)
 tela_abrir.antl.clicked.connect(voltar_tela_login)
 tela_abrir.abrir.clicked.connect(carrega_plan)
-tela_abrir.pt.clicked.connect(escolha_cpca)
-tela_escolhacpca.voltar.clicked.connect(voltar_tela_abrir)
+tela_abrir.pt.clicked.connect(proxima_tela_abrir)
+tela_escolhacpca.voltar.clicked.connect(proxima_tela_abrir)
 tela_escolhacpca.botaoescolha.clicked.connect(gerando_tab)
 tela_nome.antl.clicked.connect(voltar_nome)
 tela_nome.pt.clicked.connect(mudar_nome)
 tela_final.dow.clicked.connect(dowload)
 tela_final.new_2.clicked.connect(novo)
+tela_escolha_ordem.coluna1.clicked.connect(voltar_tela_abrir)
+tela_escolha_ordem.coluna2.clicked.connect(coluna_valor)
 #-------------------------------------------------
 #-------------------------------------------------
 #-------------------------------------------------
