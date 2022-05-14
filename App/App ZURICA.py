@@ -163,6 +163,7 @@ def gerando_tab():
         linhas = tabulacao_txt.read().split("\n")
         try:
             arquivo_tb = open('tabulação.txt',"wt")
+            indice="0"
             if len(linhas)>0:
                 for indice in range(len(linhas)):
                     tentativa = linhas[indice].split(';')
@@ -191,6 +192,7 @@ def gerando_tab():
         try:
             arquivo_tb = open('tabulação.txt',"wt")
             if len(linhas)>0:
+                indice="0"
                 for indice in range(len(linhas)):
                     tentativa = linhas[indice].split(';')
                     data = tentativa[e_data].lstrip()
